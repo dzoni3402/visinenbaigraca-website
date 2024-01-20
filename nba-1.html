@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Player Heights</title>
+    <style>
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NBA Player Height Lookup</h1>
+    
+    <label for="playerInput">Enter NBA Player Name:</label>
+    <input type="text" id="playerInput">
+    <button onclick="lookupHeight()">Get Height</button>
+
+    <p id="result"></p>
+
+    <script>
+        function lookupHeight() {
+            // Hardcoded list of NBA players and their heights (for demonstration purposes)
+            const nbaPlayers = {
+                "LeBron James": "6'9\"",
+                "Stephen Curry": "6'3\"",
+                "Kevin Durant": "6'10\"",
+                "Nikola Jokic":"6'11\"",
+                // Add more players as needed
+            };
+
+            const playerName = document.getElementById("playerInput").value;
+            const resultElement = document.getElementById("result");
+
+            if (nbaPlayers.hasOwnProperty(playerName)) {
+                const playerHeight = nbaPlayers[playerName];
+                resultElement.textContent = `${playerName}'s height is ${playerHeight}.`;
+            } else {
+                resultElement.textContent = "Player not found.";
+            }
+        }
+    </script>
+
+</body>
+</html>
